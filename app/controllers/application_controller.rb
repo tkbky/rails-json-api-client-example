@@ -1,5 +1,21 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+
   protect_from_forgery with: :exception
+
+  around_action :authenticate_user!
+
+  rescue_from JsonApiClient::Errors::NotAuthorized, with: :not_authorized!
+
+  private
+
+  def authenticate_user!
+    BaseResource.authenticate_with(session[:email], session[:auth_token]) do
+      yield
+    end
+  end
+
+  def not_authorized!
+    redirect_to new_session_path, flash: { error: 'Access denied!' }
+  end
+
 end
