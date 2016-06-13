@@ -20,6 +20,8 @@ gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5.x'
 
+gem 'slim-rails'
+
 gem 'json_api_client'
 
 
