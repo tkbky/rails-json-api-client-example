@@ -21,7 +21,7 @@ class BaseResource < JsonApiClient::Resource
 
     def connection
       super.tap do |conn|
-        conn.use TokenAuthMiddleware, self
+        conn.use TokenAuthMiddleware, BaseResource
       end
     end
 
