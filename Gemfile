@@ -28,6 +28,9 @@ gem 'slim-rails'
 # API client for interacting with JSON API
 gem 'json_api_client'
 
+# Front end framework
+gem 'bootstrap-sass', '~> 3.3.6'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

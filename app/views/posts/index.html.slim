@@ -1,4 +1,8 @@
-h1 List of posts
+.container
+  .row
+    .col-xs-12.col-sm-8.col-sm-offset-2
 
-= render @paginator.collection
-= pager(@paginator)
+      h1 List of posts
+
+      = render @paginator.collection
+      = pager(@paginator)
