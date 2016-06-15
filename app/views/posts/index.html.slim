@@ -1,3 +1,4 @@
 h1 List of posts
 
-= render @posts
+= render @paginator.collection
+= pager(@paginator)
